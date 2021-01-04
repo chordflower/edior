@@ -1,0 +1,8 @@
+language: java
+
+cache:
+  direcrories:
+    - $HOME/.m2
+    
+jdk:
+  - openjdk15
