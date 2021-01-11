@@ -62,7 +62,7 @@
     <maven.clean.followSymLinks>true</maven.clean.followSymLinks>
 
     <!-- Versions -->
-    <jackson.version>2.11.2</jackson.version>
+    <jackson.version>2.12.1</jackson.version>
     <junit-jupiter.version>5.7.0</junit-jupiter.version>
     <deltaspike.version>1.9.4</deltaspike.version>
   </properties>
