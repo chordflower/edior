@@ -419,3 +419,4 @@ gradle-app.setting
 **/build/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,eclipse,maven,gradle,intellij+all,netbeans,backup,svn,cvs,compressedarchive
+edior-editor/.flattened-pom.xml
