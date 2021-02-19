@@ -24,7 +24,7 @@ Edior is a JavaFx based lightweight markup text editor.
 Download the edior source using:
 
 * Git from [https://github.com/chordflower/edior.git](https://github.com/chordflower/edior.git);
-* A zip from [https://github.com/dthree/vorpal/archive/master.zip](https://github.com/dthree/vorpal/archive/master.zip).
+* A zip from [https://github.com/chordflower/edior/archive/master.zip](https://github.com/chordflower/edior/archive/master.zip).
 
 Then in a shell, type:
 
