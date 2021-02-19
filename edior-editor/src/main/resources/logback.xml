@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false">
+  <contextName>edior</contextName>
+  <jmxConfigurator/>
+  <shutdownHook/>
+
+  <turboFilter class="ch.qos.logback.classic.turbo.DuplicateMessageFilter">
+    <allowedRepetitions>3</allowedRepetitions>
+    <cacheSize>50</cacheSize>
+  </turboFilter>
+
+  <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <append>true</append>
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+      <includeCallerData>true</includeCallerData>
+      <jsonFactoryDecorator class="net.logstash.logback.decorate.yaml.YamlJsonFactoryDecorator"/>
+      <fieldNames class="net.logstash.logback.fieldnames.ShortenedFieldNames"/>
+      <version>2</version>
+      <writeVersionAsInteger>true</writeVersionAsInteger>
+      <timestampPattern>yyyy-MM-dd'T'HH:mm:ss.SSS</timestampPattern>
+      <timeZone>UTC</timeZone>
+      <messageSplitRegex>UNIX</messageSplitRegex>
+      <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+        <rootCauseFirst>true</rootCauseFirst>
+      </throwableConverter>
+    </encoder>
+    <immediateFlush>false</immediateFlush>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>./log/edior-%d{yyyy-MM-dd,UTC}.log.zip</fileNamePattern>
+      <maxHistory>186</maxHistory>
+      <cleanHistoryOnStart>true</cleanHistoryOnStart>
+    </rollingPolicy>
+  </appender>
+
+  <appender name="async" class="ch.qos.logback.classic.AsyncAppender">
+    <discardingThreshold>10</discardingThreshold>
+    <includeCallerData>true</includeCallerData>
+    <maxFlushTime>180</maxFlushTime>
+    <appender-ref ref="file"/>
+  </appender>
+
+  <root level="info">
+    <appender-ref ref="async"/>
+  </root>
+</configuration>
