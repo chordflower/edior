@@ -1,6 +1,7 @@
 # Edior
 
-![Travis (.org)](https://img.shields.io/travis/chordflower/edior?style=for-the-badge) 
+![Travis (.org)](https://img.shields.io/travis/chordflower/edior?style=for-the-badge) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fchordflower%2Fedior.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fchordflower%2Fedior?ref=badge_shield)
+
 ![GitHub language count](https://img.shields.io/github/languages/count/chordflower/edior?style=for-the-badge) 
 ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/chordflower/edior?style=for-the-badge) 
 ![Dependabot SemVer Compatibility](https://img.shields.io/dependabot/semver/chordflower/edior?style=for-the-badge) 
@@ -43,3 +44,5 @@ Please make sure to update tests as appropriate.
 
 ## License
 [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fchordflower%2Fedior.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fchordflower%2Fedior?ref=badge_large)
