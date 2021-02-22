@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
+  <id>distribution-windows</id>
+  <formats>
+    <format>zip</format>
+    <format>dir</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>lib</outputDirectory>
+      <useTransitiveDependencies>false</useTransitiveDependencies>
+      <useProjectArtifact>false</useProjectArtifact>
+      <useProjectAttachments>false</useProjectAttachments>
+      <includes>
+        <include>cc.chordflower.edior:edior-editor:jar:0.0.1-SNAPSHOT</include>
+      </includes>
+    </dependencySet>
+  </dependencySets>
+  <fileSets>
+    <fileSet>
+      <outputDirectory>/</outputDirectory>
+      <directory>src/main/resources</directory>
+      <filtered>true</filtered>
+      <lineEnding>unix</lineEnding>
+      <includes>
+        <include>config.json</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <files>
+    <file>
+      <source>${project.build.directory}/${project.build.finalName}.exe</source>
+      <destName>Edior.exe</destName>
+      <outputDirectory>/</outputDirectory>
+    </file>
+  </files>
+</assembly>

@@ -7,16 +7,242 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>edior-dist</artifactId>
-  <packaging>pom</packaging>
   <name>edior-dist</name>
   <dependencies>
     <dependency>
       <groupId>cc.chordflower.edior</groupId>
       <artifactId>edior-editor</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>controlsfx</artifactId>
+          <groupId>org.controlsfx</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>deltaspike-cdictrl-api</artifactId>
+          <groupId>org.apache.deltaspike.cdictrl</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>deltaspike-cdictrl-weld</artifactId>
+          <groupId>org.apache.deltaspike.cdictrl</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>eventbus</artifactId>
+          <groupId>org.greenrobot</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>hibernate-validator</artifactId>
+          <groupId>org.hibernate.validator</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>hibernate-validator-cdi</artifactId>
+          <groupId>org.hibernate.validator</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-annotations</artifactId>
+          <groupId>com.fasterxml.jackson.core</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-core</artifactId>
+          <groupId>com.fasterxml.jackson.core</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-databind</artifactId>
+          <groupId>com.fasterxml.jackson.core</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-dataformat-cbor</artifactId>
+          <groupId>com.fasterxml.jackson.dataformat</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-dataformat-csv</artifactId>
+          <groupId>com.fasterxml.jackson.dataformat</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-dataformat-ion</artifactId>
+          <groupId>com.fasterxml.jackson.dataformat</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-dataformat-properties</artifactId>
+          <groupId>com.fasterxml.jackson.dataformat</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-dataformat-smile</artifactId>
+          <groupId>com.fasterxml.jackson.dataformat</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-dataformat-xml</artifactId>
+          <groupId>com.fasterxml.jackson.dataformat</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-dataformat-yaml</artifactId>
+          <groupId>com.fasterxml.jackson.dataformat</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-datatype-jdk8</artifactId>
+          <groupId>com.fasterxml.jackson.datatype</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-datatype-jsr310</artifactId>
+          <groupId>com.fasterxml.jackson.datatype</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-module-blackbird</artifactId>
+          <groupId>com.fasterxml.jackson.module</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-module-mrbean</artifactId>
+          <groupId>com.fasterxml.jackson.module</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-module-parameter-names</artifactId>
+          <groupId>com.fasterxml.jackson.module</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jackson-module-paranamer</artifactId>
+          <groupId>com.fasterxml.jackson.module</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jakarta.el</artifactId>
+          <groupId>org.glassfish</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jakarta.enterprise.cdi-api</artifactId>
+          <groupId>jakarta.enterprise</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jandex</artifactId>
+          <groupId>org.jboss</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>javafx-base</artifactId>
+          <groupId>org.openjfx</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>javafx-controls</artifactId>
+          <groupId>org.openjfx</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>javafx-fxml</artifactId>
+          <groupId>org.openjfx</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>javafx-graphics</artifactId>
+          <groupId>org.openjfx</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>javafx-media</artifactId>
+          <groupId>org.openjfx</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>javafx-web</artifactId>
+          <groupId>org.openjfx</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jcl-over-slf4j</artifactId>
+          <groupId>org.slf4j</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jodd-util</artifactId>
+          <groupId>org.jodd</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jul-to-slf4j</artifactId>
+          <groupId>org.slf4j</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <groupId>org.slf4j</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>logback-classic</artifactId>
+          <groupId>ch.qos.logback</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>logstash-logback-encoder</artifactId>
+          <groupId>net.logstash.logback</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>slf4j-api</artifactId>
+          <groupId>org.slf4j</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>slf4j-ext</artifactId>
+          <groupId>org.slf4j</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>vavr</artifactId>
+          <groupId>io.vavr</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>vavr-jackson</artifactId>
+          <groupId>io.vavr</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>weld-se-core</artifactId>
+          <groupId>org.jboss.weld.se</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
   <build>
     <plugins>
+      <plugin>
+        <groupId>com.akathist.maven.plugins.launch4j</groupId>
+        <artifactId>launch4j-maven-plugin</artifactId>
+        <version>1.7.25</version>
+        <executions>
+          <execution>
+            <id>generate-windows-executable</id>
+            <phase>package</phase>
+            <goals>
+              <goal>launch4j</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <headerType>gui</headerType>
+          <icon>${project.basedir}/src/main/resources/logo.ico</icon>
+          <jre>
+            <path>jre</path>
+            <bundledJre64Bit>true</bundledJre64Bit>
+            <bundledJreAsFallback>true</bundledJreAsFallback>
+            <runtimeBits>64</runtimeBits>
+            <minVersion>15</minVersion>
+            <opts>
+              <opt>--add-opens=java.base/java.lang=ALL-UNNAMED</opt>
+              <opt>-XX:+UseZGC</opt>
+            </opts>
+            <maxHeapSize>1024</maxHeapSize>
+          </jre>
+          <jar>./lib/edior-editor-${project.version}.jar</jar>
+          <dontWrapJar>true</dontWrapJar>
+          <classPath>
+            <mainClass>cc.chordflower.edior.App</mainClass>
+            <addDependencies>true</addDependencies>
+            <jarLocation>lib/</jarLocation>
+          </classPath>
+          <saveConfig>true</saveConfig>
+          <downloadUrl>https://api.adoptopenjdk.net/v3/binary/latest/15/ga/windows/x64/jre/hotspot/normal/adoptopenjdk</downloadUrl>
+          <outfile>${project.build.directory}/${project.build.finalName}.exe</outfile>
+          <singleInstance>
+            <mutexName>ediorSingle</mutexName>
+            <windowTitle>editorSingle</windowTitle>
+          </singleInstance>
+          <supportUrl>https://github.com/chordflower/edior/issues</supportUrl>
+          <versionInfo>
+            <fileVersion>0.0.0.1</fileVersion>
+            <txtFileVersion>${project.version}</txtFileVersion>
+            <fileDescription>${project.description}</fileDescription>
+            <copyright>Carddamom (C) 2021</copyright>
+            <productVersion>0.0.1.0</productVersion>
+            <txtProductVersion>${project.version}</txtProductVersion>
+            <productName>edior</productName>
+            <companyName>${project.organization.name}</companyName>
+            <internalName>edior</internalName>
+            <originalFilename>edior.exe</originalFilename>
+          </versionInfo>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -29,6 +255,7 @@
             </goals>
             <configuration>
               <appendAssemblyId>false</appendAssemblyId>
+              <attach>true</attach>
               <archive>
                 <addMavenDescriptor>true</addMavenDescriptor>
                 <index>true</index>
@@ -43,6 +270,78 @@
               <descriptors>
                 <descriptor>${project.basedir}/src/assembly/distribution.xml</descriptor>
               </descriptors>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-distribution-windows-jre</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <appendAssemblyId>true</appendAssemblyId>
+              <archive>
+                <addMavenDescriptor>true</addMavenDescriptor>
+                <index>true</index>
+                <compress>true</compress>
+                <manifest>
+                  <addBuildEnvironmentEntries>true</addBuildEnvironmentEntries>
+                  <addDefaultEntries>true</addDefaultEntries>
+                  <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                  <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                </manifest>
+              </archive>
+              <descriptors>
+                <descriptor>${project.basedir}/src/assembly/distribution-windows-jre.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-distribution-windows</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <appendAssemblyId>true</appendAssemblyId>
+              <archive>
+                <addMavenDescriptor>true</addMavenDescriptor>
+                <index>true</index>
+                <compress>true</compress>
+                <manifest>
+                  <addBuildEnvironmentEntries>true</addBuildEnvironmentEntries>
+                  <addDefaultEntries>true</addDefaultEntries>
+                  <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                  <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                </manifest>
+              </archive>
+              <descriptors>
+                <descriptor>${project.basedir}/src/assembly/distribution-windows.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.igormaznitsa</groupId>
+        <artifactId>mvn-jlink-wrapper</artifactId>
+        <version>1.1.0</version>
+        <executions>
+          <execution>
+            <id>download-windows-jdk</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>cache-jdk</goal>
+            </goals>
+            <configuration>
+              <provider>ADOPT</provider>
+              <providerConfig>
+                <release>15</release>
+                <arch>x64</arch>
+                <os>windows</os>
+                <type>jre</type>
+              </providerConfig>
+              <jdkPathProperty>windows.jvm.path</jdkPathProperty>
             </configuration>
           </execution>
         </executions>
@@ -63,9 +362,8 @@
                 <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT.tar.gz" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT.tar.gz"/>
                 <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT.tar.xz" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT.tar.xz"/>
                 <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT.zip" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT.zip"/>
-                <copy todir="${project.basedir}/../dist" >
-                  <fileset dir="${project.basedir}/target" includes="edior-dist-0.0.1-SNAPSHOT/**"/>
-                </copy>
+                <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT-distribution-windows.zip" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT-win64.zip"/>
+                <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT-distribution-windows-jre.zip" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT-win64-jre.zip"/>
               </target>
             </configuration>
           </execution>
@@ -93,4 +391,134 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>macos-dist</id>
+      <activation>
+        <os>
+          <family>mac</family>
+        </os>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.igormaznitsa</groupId>
+            <artifactId>mvn-jlink-wrapper</artifactId>
+            <version>1.1.0</version>
+            <executions>
+              <execution>
+                <id>download-osx-jdk</id>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>cache-jdk</goal>
+                </goals>
+                <configuration>
+                  <provider>ADOPT</provider>
+                  <providerConfig>
+                    <release>15</release>
+                    <arch>x64</arch>
+                    <os>mac</os>
+                    <type>jre</type>
+                  </providerConfig>
+                  <jdkPathProperty>mac.jvm.path</jdkPathProperty>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>de.perdian.maven.plugins</groupId>
+            <artifactId>macosappbundler-maven-plugin</artifactId>
+            <version>1.10.0</version>
+            <executions>
+              <execution>
+                <id>generate-mac-bundle-with-jre</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>bundle</goal>
+                </goals>
+                <configuration>
+                  <plist>
+                    <CFBundleIconFile>src/main/resources/logo.icns</CFBundleIconFile>
+                    <CFBundleDisplayName>edior</CFBundleDisplayName>
+                    <CFBundleIdentifier>${project.groupId}.edior</CFBundleIdentifier>
+                    <CFBundleName>Edior-Extra</CFBundleName>
+                    <CFBundleExecutable>edior</CFBundleExecutable>
+                    <JVMMainClassName>cc.chordflower.edior.App</JVMMainClassName>
+                    <JVMVersion>15+</JVMVersion>
+                    <JVMOptions>
+                      <string>--add-opens=java.base/java.lang=ALL-UNNAMED</string>
+                      <string>-XX:+UseZGC</string>
+                      <string>-Xmx1024m</string>
+                    </JVMOptions>
+                    <NSHighResolutionCapable>true</NSHighResolutionCapable>
+                  </plist>
+                  <jdk>
+                    <include>true</include>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <location>${mac.jvm.path}</location>
+                  </jdk>
+                  <nativeBinary>X86_64</nativeBinary>
+                  <dmg>
+                    <generate>true</generate>
+                    <createApplicationsSymlink>true</createApplicationsSymlink>
+                    <autoFallback>true</autoFallback>
+                    <dmgFileName>${project.build.finalName}-jre</dmgFileName>
+                  </dmg>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-mac-bundle-without-jre</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>bundle</goal>
+                </goals>
+                <configuration>
+                  <plist>
+                    <CFBundleIconFile>src/main/resources/logo.icns</CFBundleIconFile>
+                    <CFBundleDisplayName>edior</CFBundleDisplayName>
+                    <CFBundleIdentifier>${project.groupId}.edior</CFBundleIdentifier>
+                    <CFBundleName>Edior</CFBundleName>
+                    <CFBundleExecutable>edior</CFBundleExecutable>
+                    <JVMMainClassName>cc.chordflower.edior.App</JVMMainClassName>
+                    <JVMVersion>15+</JVMVersion>
+                    <JVMOptions>
+                      <string>--add-opens=java.base/java.lang=ALL-UNNAMED</string>
+                      <string>-XX:+UseZGC</string>
+                      <string>-Xmx1024m</string>
+                    </JVMOptions>
+                    <NSHighResolutionCapable>true</NSHighResolutionCapable>
+                  </plist>
+                  <dmg>
+                    <generate>true</generate>
+                    <createApplicationsSymlink>true</createApplicationsSymlink>
+                    <autoFallback>true</autoFallback>
+                    <dmgFileName>${project.build.finalName}</dmgFileName>
+                  </dmg>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>generate-distribution-mac</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target>
+                    <copy file="${project.basedir}/target/Edior-Extra_0.0.1-SNAPSHOT.dmg" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT-mac-jre.dmg"/>
+                    <copy file="${project.basedir}/target/Edior_0.0.1-SNAPSHOT.dmg" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT-mac.dmg"/>
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
