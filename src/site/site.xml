@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd"
+         name="Template" xmlns="http://maven.apache.org/DECORATION/1.8.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <skin>
+    <groupId>io.github.devacfr.maven.skins</groupId>
+    <artifactId>reflow-maven-skin</artifactId>
+    <version>2.3.0</version>
+  </skin>
+  <body>
+    <menu name="Overview">
+      <item name="Distribution" href="distribution.html"/>
+    </menu>
+    <menu ref="parent" inherit="top"/>
+    <menu ref="modules" inherit="top"/>
+    <menu ref="reports" inherit="top"/>
+  </body>
+  <version position="none"/>
+  <poweredBy>
+    <logo name="Maven" href="https://maven.apache.org/" img="https://maven.apache.org/images/logos/maven-feather.png"/>
+  </poweredBy>
+  <custom>
+    <reflowSkin>
+      <absoluteResourceURL>/</absoluteResourceURL>
+      <theme>bootswatch-cerulean</theme>
+      <shortTitle>generate</shortTitle>
+      <highlightJs>true</highlightJs>
+      <highlightJsTheme>mono-blue</highlightJsTheme>
+      <imgLightbox>true</imgLightbox>
+      <smoothScroll>true</smoothScroll>
+      <anchorJS>true</anchorJS>
+      <bootstrapIcons>true</bootstrapIcons>
+      <html5Anchor>true</html5Anchor>
+      <skinAttribution>true</skinAttribution>
+      <navbar/>
+      <bottomNav>
+        <column/>
+      </bottomNav>
+    </reflowSkin>
+  </custom>
+</project>
