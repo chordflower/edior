@@ -4,7 +4,6 @@
 [![Java CI with Maven](https://github.com/chordflower/edior/actions/workflows/maven.yml/badge.svg)](https://github.com/chordflower/edior/actions/workflows/maven.yml)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fchordflower%2Fedior.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fchordflower%2Fedior?ref=badge_shield)
 [![GitHub Language Count](https://img.shields.io/github/languages/count/chordflower/edior?style=plastic)](https://github.com/chordflower/edior/search?l=Java)
-[![Codacy Security Scan](https://github.com/chordflower/edior/actions/workflows/codacy-analysis.yml/badge.svg)](https://github.com/chordflower/edior/actions/workflows/codacy-analysis.yml)
 [![CodeQL](https://github.com/chordflower/edior/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/chordflower/edior/actions/workflows/codeql-analysis.yml)
 [![GitHub Code Size in Bytes](https://img.shields.io/github/languages/code-size/chordflower/edior?style=plastic)](https://github.com/chordflower/edior/pulse/monthly)
 [![GitHub](https://img.shields.io/github/license/chordflower/edior?style=plastic)](https://github.com/chordflower/edior/blob/develop/LICENSE-2.0.txt)
