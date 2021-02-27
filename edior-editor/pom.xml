@@ -21,7 +21,7 @@
     <logstash-logback-encoder.version>6.5</logstash-logback-encoder.version>
     <jodd-util.version>6.0.0</jodd-util.version>
     <jakarta.el.version>4.0.1</jakarta.el.version>
-    <jandex.version>2.0.1.Final</jandex.version>
+    <jandex.version>2.2.3.Final</jandex.version>
   </properties>
   <dependencies>
     <!-- JavaFX -->
