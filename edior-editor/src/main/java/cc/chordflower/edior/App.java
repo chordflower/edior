@@ -21,6 +21,7 @@ public class App {
     contextControl.startContext( ApplicationScoped.class );
 
     // You can use CDI here
+
   }
 
 }
