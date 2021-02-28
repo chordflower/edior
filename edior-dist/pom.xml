@@ -187,63 +187,6 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>com.akathist.maven.plugins.launch4j</groupId>
-        <artifactId>launch4j-maven-plugin</artifactId>
-        <version>1.7.25</version>
-        <executions>
-          <execution>
-            <id>generate-windows-executable</id>
-            <phase>package</phase>
-            <goals>
-              <goal>launch4j</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <headerType>gui</headerType>
-          <icon>${project.basedir}/src/main/resources/logo.ico</icon>
-          <jre>
-            <path>jre</path>
-            <bundledJre64Bit>true</bundledJre64Bit>
-            <bundledJreAsFallback>true</bundledJreAsFallback>
-            <runtimeBits>64</runtimeBits>
-            <minVersion>15</minVersion>
-            <opts>
-              <opt>--add-opens=java.base/java.lang=ALL-UNNAMED</opt>
-              <opt>-XX:+UseZGC</opt>
-            </opts>
-            <maxHeapSize>1024</maxHeapSize>
-          </jre>
-          <jar>./lib/edior-editor-${project.version}.jar</jar>
-          <dontWrapJar>true</dontWrapJar>
-          <classPath>
-            <mainClass>cc.chordflower.edior.App</mainClass>
-            <addDependencies>true</addDependencies>
-            <jarLocation>lib/</jarLocation>
-          </classPath>
-          <saveConfig>true</saveConfig>
-          <downloadUrl>https://api.adoptopenjdk.net/v3/binary/latest/15/ga/windows/x64/jre/hotspot/normal/adoptopenjdk</downloadUrl>
-          <outfile>${project.build.directory}/${project.build.finalName}.exe</outfile>
-          <singleInstance>
-            <mutexName>ediorSingle</mutexName>
-            <windowTitle>editorSingle</windowTitle>
-          </singleInstance>
-          <supportUrl>https://github.com/chordflower/edior/issues</supportUrl>
-          <versionInfo>
-            <fileVersion>0.0.0.1</fileVersion>
-            <txtFileVersion>${project.version}</txtFileVersion>
-            <fileDescription>${project.description}</fileDescription>
-            <copyright>Carddamom (C) 2021</copyright>
-            <productVersion>0.0.1.0</productVersion>
-            <txtProductVersion>${project.version}</txtProductVersion>
-            <productName>edior</productName>
-            <companyName>${project.organization.name}</companyName>
-            <internalName>edior</internalName>
-            <originalFilename>edior.exe</originalFilename>
-          </versionInfo>
-        </configuration>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
@@ -272,78 +215,6 @@
               </descriptors>
             </configuration>
           </execution>
-          <execution>
-            <id>generate-distribution-windows-jre</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <appendAssemblyId>true</appendAssemblyId>
-              <archive>
-                <addMavenDescriptor>true</addMavenDescriptor>
-                <index>true</index>
-                <compress>true</compress>
-                <manifest>
-                  <addBuildEnvironmentEntries>true</addBuildEnvironmentEntries>
-                  <addDefaultEntries>true</addDefaultEntries>
-                  <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                  <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                </manifest>
-              </archive>
-              <descriptors>
-                <descriptor>${project.basedir}/src/assembly/distribution-windows-jre.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-          <execution>
-            <id>generate-distribution-windows</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <appendAssemblyId>true</appendAssemblyId>
-              <archive>
-                <addMavenDescriptor>true</addMavenDescriptor>
-                <index>true</index>
-                <compress>true</compress>
-                <manifest>
-                  <addBuildEnvironmentEntries>true</addBuildEnvironmentEntries>
-                  <addDefaultEntries>true</addDefaultEntries>
-                  <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                  <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                </manifest>
-              </archive>
-              <descriptors>
-                <descriptor>${project.basedir}/src/assembly/distribution-windows.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>com.igormaznitsa</groupId>
-        <artifactId>mvn-jlink-wrapper</artifactId>
-        <version>1.1.0</version>
-        <executions>
-          <execution>
-            <id>download-windows-jdk</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>cache-jdk</goal>
-            </goals>
-            <configuration>
-              <provider>ADOPT</provider>
-              <providerConfig>
-                <release>15</release>
-                <arch>x64</arch>
-                <os>windows</os>
-                <type>jre</type>
-              </providerConfig>
-              <jdkPathProperty>windows.jvm.path</jdkPathProperty>
-            </configuration>
-          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -362,8 +233,6 @@
                 <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT.tar.gz" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT.tar.gz"/>
                 <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT.tar.xz" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT.tar.xz"/>
                 <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT.zip" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT.zip"/>
-                <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT-distribution-windows.zip" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT-win64.zip"/>
-                <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT-distribution-windows-jre.zip" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT-win64-jre.zip"/>
               </target>
             </configuration>
           </execution>
@@ -512,6 +381,166 @@
                   <target>
                     <copy file="${project.basedir}/target/Edior-Extra_0.0.1-SNAPSHOT.dmg" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT-mac-jre.dmg"/>
                     <copy file="${project.basedir}/target/Edior_0.0.1-SNAPSHOT.dmg" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT-mac.dmg"/>
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>windows-dist</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.igormaznitsa</groupId>
+            <artifactId>mvn-jlink-wrapper</artifactId>
+            <version>1.1.0</version>
+            <executions>
+              <execution>
+                <id>download-windows-jdk</id>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>cache-jdk</goal>
+                </goals>
+                <configuration>
+                  <provider>ADOPT</provider>
+                  <providerConfig>
+                    <release>15</release>
+                    <arch>x64</arch>
+                    <os>windows</os>
+                    <type>jre</type>
+                  </providerConfig>
+                  <jdkPathProperty>windows.jvm.path</jdkPathProperty>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>com.akathist.maven.plugins.launch4j</groupId>
+            <artifactId>launch4j-maven-plugin</artifactId>
+            <version>1.7.25</version>
+            <executions>
+              <execution>
+                <id>generate-windows-executable</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>launch4j</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <headerType>gui</headerType>
+              <icon>${project.basedir}/src/main/resources/logo.ico</icon>
+              <jre>
+                <path>jre</path>
+                <bundledJre64Bit>true</bundledJre64Bit>
+                <bundledJreAsFallback>true</bundledJreAsFallback>
+                <runtimeBits>64</runtimeBits>
+                <minVersion>15</minVersion>
+                <opts>
+                  <opt>--add-opens=java.base/java.lang=ALL-UNNAMED</opt>
+                  <opt>-XX:+UseZGC</opt>
+                </opts>
+                <maxHeapSize>1024</maxHeapSize>
+              </jre>
+              <jar>./lib/edior-editor-${project.version}.jar</jar>
+              <dontWrapJar>true</dontWrapJar>
+              <classPath>
+                <mainClass>cc.chordflower.edior.App</mainClass>
+                <addDependencies>true</addDependencies>
+                <jarLocation>lib/</jarLocation>
+              </classPath>
+              <saveConfig>true</saveConfig>
+              <downloadUrl>https://api.adoptopenjdk.net/v3/binary/latest/15/ga/windows/x64/jre/hotspot/normal/adoptopenjdk</downloadUrl>
+              <outfile>${project.build.directory}/${project.build.finalName}.exe</outfile>
+              <singleInstance>
+                <mutexName>ediorSingle</mutexName>
+              </singleInstance>
+              <supportUrl>https://github.com/chordflower/edior/issues</supportUrl>
+              <versionInfo>
+                <fileVersion>0.0.0.1</fileVersion>
+                <txtFileVersion>${project.version}</txtFileVersion>
+                <fileDescription>${project.description}</fileDescription>
+                <copyright>Carddamom (C) 2021</copyright>
+                <productVersion>0.0.1.0</productVersion>
+                <txtProductVersion>${project.version}</txtProductVersion>
+                <productName>edior</productName>
+                <companyName>${project.organization.name}</companyName>
+                <internalName>edior</internalName>
+                <originalFilename>edior.exe</originalFilename>
+              </versionInfo>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>generate-distribution-windows-jre</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+                <configuration>
+                  <appendAssemblyId>true</appendAssemblyId>
+                  <archive>
+                    <addMavenDescriptor>true</addMavenDescriptor>
+                    <index>true</index>
+                    <compress>true</compress>
+                    <manifest>
+                      <addBuildEnvironmentEntries>true</addBuildEnvironmentEntries>
+                      <addDefaultEntries>true</addDefaultEntries>
+                      <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                      <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                    </manifest>
+                  </archive>
+                  <descriptors>
+                    <descriptor>${project.basedir}/src/assembly/distribution-windows-jre.xml</descriptor>
+                  </descriptors>
+                </configuration>
+              </execution>
+              <execution>
+                <id>generate-distribution-windows</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+                <configuration>
+                  <appendAssemblyId>true</appendAssemblyId>
+                  <archive>
+                    <addMavenDescriptor>true</addMavenDescriptor>
+                    <index>true</index>
+                    <compress>true</compress>
+                    <manifest>
+                      <addBuildEnvironmentEntries>true</addBuildEnvironmentEntries>
+                      <addDefaultEntries>true</addDefaultEntries>
+                      <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                      <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                    </manifest>
+                  </archive>
+                  <descriptors>
+                    <descriptor>${project.basedir}/src/assembly/distribution-windows.xml</descriptor>
+                  </descriptors>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>generate-windows-distribution</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target>
+                    <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT-distribution-windows.zip" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT-win64.zip"/>
+                    <copy file="${project.basedir}/target/edior-dist-0.0.1-SNAPSHOT-distribution-windows-jre.zip" tofile="${project.basedir}/../dist/edior-dist-0.0.1-SNAPSHOT-win64-jre.zip"/>
                   </target>
                 </configuration>
               </execution>

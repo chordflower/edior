@@ -18,3 +18,5 @@ The distribution directory is dist in the project root, and contains the followi
 - win64.zip => The distribution in a windows executable with a x64 bits jre bundled;
 - mac-jre.dmg => The distribution in a macOS executable with a x64 jre bundled;
 - mac.dmg => The distribution in a macOS executable without a jre bundled;
+
+There are no specific linux builds, just use one of the tarballs on linux.
