@@ -15,7 +15,7 @@
     <logback-core.version>1.2.3</logback-core.version>
     <jackson-module-blackbird.version>2.12.1</jackson-module-blackbird.version>
     <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
-    <jodd-util.version>6.0.0</jodd-util.version>
+    <jodd-util.version>6.0.1</jodd-util.version>
     <jakarta.el.version>4.0.1</jakarta.el.version>
     <jandex.version>2.2.3.Final</jandex.version>
   </properties>
