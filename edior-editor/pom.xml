@@ -9,7 +9,7 @@
   <description>The editor component of edior</description>
   <properties>
     <javafx.version>15.0.1</javafx.version>
-    <controlsfx.version>11.0.3</controlsfx.version>
+    <controlsfx.version>11.1.0</controlsfx.version>
     <weld.version>4.0.0.Final</weld.version>
     <jakarta.enterprise.cdi-api.version>3.0.0</jakarta.enterprise.cdi-api.version>
     <hibernate-validator.version>7.0.1.Final</hibernate-validator.version>
