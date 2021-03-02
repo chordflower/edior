@@ -312,7 +312,7 @@
                     <CFBundleIdentifier>${project.groupId}.edior</CFBundleIdentifier>
                     <CFBundleName>Edior-Extra</CFBundleName>
                     <CFBundleExecutable>edior</CFBundleExecutable>
-                    <JVMMainClassName>cc.chordflower.edior.App</JVMMainClassName>
+                    <JVMMainClassName>cc.chordflower.edior.EdiorApplication</JVMMainClassName>
                     <JVMVersion>15+</JVMVersion>
                     <JVMOptions>
                       <string>--add-opens=java.base/java.lang=ALL-UNNAMED</string>
@@ -348,7 +348,7 @@
                     <CFBundleIdentifier>${project.groupId}.edior</CFBundleIdentifier>
                     <CFBundleName>Edior</CFBundleName>
                     <CFBundleExecutable>edior</CFBundleExecutable>
-                    <JVMMainClassName>cc.chordflower.edior.App</JVMMainClassName>
+                    <JVMMainClassName>cc.chordflower.edior.EdiorApplication</JVMMainClassName>
                     <JVMVersion>15+</JVMVersion>
                     <JVMOptions>
                       <string>--add-opens=java.base/java.lang=ALL-UNNAMED</string>
@@ -448,7 +448,7 @@
               <jar>./lib/edior-editor-${project.version}.jar</jar>
               <dontWrapJar>true</dontWrapJar>
               <classPath>
-                <mainClass>cc.chordflower.edior.App</mainClass>
+                <mainClass>cc.chordflower.edior.EdiorApplication</mainClass>
                 <addDependencies>true</addDependencies>
                 <jarLocation>lib/</jarLocation>
               </classPath>

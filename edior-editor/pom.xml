@@ -81,6 +81,16 @@
 
     <!-- Apache DeltaSpike -->
     <dependency>
+      <groupId>org.apache.deltaspike.core</groupId>
+      <artifactId>deltaspike-core-api</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.deltaspike.core</groupId>
+      <artifactId>deltaspike-core-impl</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
       <groupId>org.apache.deltaspike.cdictrl</groupId>
       <artifactId>deltaspike-cdictrl-api</artifactId>
       <scope>compile</scope>
@@ -343,7 +353,7 @@
           <archive>
             <index>true</index>
             <manifest>
-              <mainClass>cc.chordflower.edior.App</mainClass>
+              <mainClass>cc.chordflower.edior.EdiorApplication</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -397,7 +407,7 @@
         <artifactId>javafx-maven-plugin</artifactId>
         <version>0.0.5</version>
         <configuration>
-          <mainClass>cc.chordflower.edior.App</mainClass>
+          <mainClass>cc.chordflower.edior.EdiorApplication</mainClass>
         </configuration>
       </plugin>
       <plugin>
