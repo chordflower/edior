@@ -12,11 +12,7 @@
     <controlsfx.version>11.0.3</controlsfx.version>
     <weld.version>4.0.0.Final</weld.version>
     <jakarta.enterprise.cdi-api.version>3.0.0</jakarta.enterprise.cdi-api.version>
-    <hibernate-validator.version>7.0.1.Final</hibernate-validator.version>
-    <slf4j-api.version>1.7.30</slf4j-api.version>
     <logback-core.version>1.2.3</logback-core.version>
-    <eventbus.version>3.2.0</eventbus.version>
-    <vavr.version>1.0.0-alpha-3</vavr.version>
     <jackson-module-blackbird.version>2.12.1</jackson-module-blackbird.version>
     <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
     <jodd-util.version>6.0.0</jodd-util.version>
@@ -79,21 +75,36 @@
       </exclusions>
     </dependency>
 
-    <!-- Apache DeltaSpike -->
+    <!-- CDI -->
     <dependency>
-      <groupId>org.apache.deltaspike.core</groupId>
-      <artifactId>deltaspike-core-api</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.deltaspike.core</groupId>
-      <artifactId>deltaspike-core-impl</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.deltaspike.cdictrl</groupId>
-      <artifactId>deltaspike-cdictrl-api</artifactId>
-      <scope>compile</scope>
+      <groupId>cc.chordflower.edior</groupId>
+      <artifactId>cdi-utilities</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>deltaspike-cdictrl-api</artifactId>
+          <groupId>org.apache.deltaspike.cdictrl</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>deltaspike-cdictrl-weld</artifactId>
+          <groupId>org.apache.deltaspike.cdictrl</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>deltaspike-core-api</artifactId>
+          <groupId>org.apache.deltaspike.core</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>deltaspike-core-impl</artifactId>
+          <groupId>org.apache.deltaspike.core</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>hibernate-validator-cdi</artifactId>
+          <groupId>org.hibernate.validator</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>slf4j-api</artifactId>
+          <groupId>org.slf4j</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.jboss.weld.se</groupId>
@@ -114,11 +125,6 @@
       <version>${jandex.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.deltaspike.cdictrl</groupId>
-      <artifactId>deltaspike-cdictrl-weld</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>jakarta.enterprise</groupId>
       <artifactId>jakarta.enterprise.cdi-api</artifactId>
       <version>${jakarta.enterprise.cdi-api.version}</version>
@@ -126,11 +132,6 @@
     </dependency>
     
     <!-- Slf4j -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>${slf4j-api.version}</version>
-    </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
@@ -207,11 +208,6 @@
       <version>${hibernate-validator.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.hibernate.validator</groupId>
-      <artifactId>hibernate-validator-cdi</artifactId>
-      <version>${hibernate-validator.version}</version>
-    </dependency>
-    <dependency>
       <groupId>org.glassfish</groupId>
       <artifactId>jakarta.el</artifactId>
       <version>${jakarta.el.version}</version>
@@ -246,18 +242,6 @@
       <artifactId>jackson-dataformat-yaml</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.fasterxml.jackson.dataformat</groupId>
-      <artifactId>jackson-dataformat-xml</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.dataformat</groupId>
-      <artifactId>jackson-dataformat-properties</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.dataformat</groupId>
-      <artifactId>jackson-dataformat-csv</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
       <artifactId>jackson-datatype-jsr310</artifactId>
     </dependency>
@@ -282,25 +266,8 @@
       <artifactId>jackson-module-blackbird</artifactId>
       <version>${jackson-module-blackbird.version}</version>
     </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.dataformat</groupId>
-      <artifactId>jackson-dataformat-cbor</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.dataformat</groupId>
-      <artifactId>jackson-dataformat-ion</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.dataformat</groupId>
-      <artifactId>jackson-dataformat-smile</artifactId>
-    </dependency>
 
     <!-- Utilities -->
-    <dependency>
-      <groupId>org.greenrobot</groupId>
-      <artifactId>eventbus</artifactId>
-      <version>${eventbus.version}</version>
-    </dependency>
     <dependency>
       <groupId>io.vavr</groupId>
       <artifactId>vavr</artifactId>
@@ -335,15 +302,7 @@
               <artifactId>hibernate-validator-annotation-processor</artifactId>
               <version>7.0.0.Alpha6</version>
             </annotationProcessorPath>
-            <annotationProcessorPath>
-              <groupId>org.greenrobot</groupId>
-              <artifactId>eventbus-annotation-processor</artifactId>
-              <version>3.2.0</version>
-            </annotationProcessorPath>
           </annotationProcessorPaths>
-          <compilerArgs>
-            <compilerArg>-AeventBusIndex=cc.chordflower.edior.application.events.AppEventIndex</compilerArg>
-        </compilerArgs>
         </configuration>
       </plugin>
       <plugin>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>cc.chordflower.edior</groupId>
@@ -7,6 +7,7 @@
   <modules>
     <module>edior-editor</module>
     <module>edior-dist</module>
+    <module>cdi-utilities</module>
   </modules>
   <packaging>pom</packaging>
   <name>edior-parent</name>
@@ -61,11 +62,13 @@
     <maven.compiler.useIncrementalCompilation>true</maven.compiler.useIncrementalCompilation>
     <maven.clean.retryOnError>true</maven.clean.retryOnError>
     <maven.clean.followSymLinks>true</maven.clean.followSymLinks>
-
     <!-- Versions -->
     <jackson.version>2.12.1</jackson.version>
     <junit-jupiter.version>5.7.1</junit-jupiter.version>
     <deltaspike.version>1.9.4</deltaspike.version>
+    <hibernate-validator.version>7.0.1.Final</hibernate-validator.version>
+    <slf4j-api.version>1.7.30</slf4j-api.version>
+    <vavr.version>1.0.0-alpha-3</vavr.version>
   </properties>
   <build>
     <pluginManagement>
@@ -184,24 +187,24 @@
             </execution>
           </executions>
         </plugin>
-         <plugin>
-           <groupId>org.codehaus.mojo</groupId>
-           <artifactId>buildnumber-maven-plugin</artifactId>
-           <version>1.4</version>
-           <configuration>
-             <outputDirectory>${project.build.directory}/classes</outputDirectory>
-             <attach>true</attach>
-           </configuration>
-           <executions>
-             <execution>
-               <id>generate-properties</id>
-               <phase>generate-resources</phase>
-               <goals>
-                 <goal>create-metadata</goal>
-               </goals>
-             </execution>
-           </executions>
-         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>buildnumber-maven-plugin</artifactId>
+          <version>1.4</version>
+          <configuration>
+            <outputDirectory>${project.build.directory}/classes</outputDirectory>
+            <attach>true</attach>
+          </configuration>
+          <executions>
+            <execution>
+              <id>generate-properties</id>
+              <phase>generate-resources</phase>
+              <goals>
+                <goal>create-metadata</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>license-maven-plugin</artifactId>
@@ -244,7 +247,9 @@
               <transformer implementation="org.apache.maven.plugins.shade.resource.ComponentsXmlResourceTransformer"/>
               <transformer implementation="org.apache.maven.plugins.shade.resource.PluginXmlResourceTransformer"/>
               <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-              <transformer implementation="org.apache.maven.plugins.shade.resource.properties.OpenWebBeansPropertiesTransformer"/>
+              <transformer implementation="org.apache.maven.plugins.shade.resource.XmlAppendingTransformer">
+                <resource>META-INF/beans.xml</resource>
+              </transformer>
             </transformers>
             <createDependencyReducedPom>false</createDependencyReducedPom>
           </configuration>
@@ -325,7 +330,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      
+
       <!-- Own modules -->
       <dependency>
         <groupId>${project.groupId}</groupId>
@@ -335,6 +340,11 @@
       <dependency>
         <groupId>${project.groupId}</groupId>
         <artifactId>edior-dist</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>cdi-utilities</artifactId>
         <version>${project.version}</version>
       </dependency>
     </dependencies>
