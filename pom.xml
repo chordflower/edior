@@ -63,7 +63,7 @@
     <maven.clean.retryOnError>true</maven.clean.retryOnError>
     <maven.clean.followSymLinks>true</maven.clean.followSymLinks>
     <!-- Versions -->
-    <jackson.version>2.12.1</jackson.version>
+    <jackson.version>2.12.2</jackson.version>
     <junit-jupiter.version>5.7.1</junit-jupiter.version>
     <deltaspike.version>1.9.4</deltaspike.version>
     <hibernate-validator.version>7.0.1.Final</hibernate-validator.version>
