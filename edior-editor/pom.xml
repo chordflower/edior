@@ -10,7 +10,7 @@
   <properties>
     <javafx.version>15.0.1</javafx.version>
     <controlsfx.version>11.1.0</controlsfx.version>
-    <weld.version>4.0.0.Final</weld.version>
+    <weld.version>4.0.1.Final</weld.version>
     <jakarta.enterprise.cdi-api.version>3.0.0</jakarta.enterprise.cdi-api.version>
     <logback-core.version>1.2.3</logback-core.version>
     <jackson-module-blackbird.version>2.12.1</jackson-module-blackbird.version>
