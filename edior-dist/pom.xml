@@ -297,7 +297,7 @@
           <plugin>
             <groupId>de.perdian.maven.plugins</groupId>
             <artifactId>macosappbundler-maven-plugin</artifactId>
-            <version>1.10.0</version>
+            <version>1.11.0</version>
             <executions>
               <execution>
                 <id>generate-mac-bundle-with-jre</id>
